@@ -7,8 +7,11 @@ from pprint import pprint
 # pprint(r.json())
 
 url = 'https://www.globalsqa.com/wp-json/wp/v2'
-pages_api = f'{url}/pages'
+pages_api = f'{url}/pages?page=4'
 res = get(pages_api)
-data =res.json()
+data = res.json()
 for page in data:
-    print(page.get('_links'))
+    try:
+        print(page.get('_links'))
+    except:
+        print("Page not found")
