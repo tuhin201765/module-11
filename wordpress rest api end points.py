@@ -8,6 +8,7 @@ from pprint import pprint
 
 url = 'https://www.globalsqa.com/wp-json/wp/v2'
 pages_api = f'{url}/pages?page=4'
+# pages_api = f'{url}/pages?per_page=8'
 res = get(pages_api)
 data = res.json()
 for page in data:
